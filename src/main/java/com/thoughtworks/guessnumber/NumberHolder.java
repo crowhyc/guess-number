@@ -13,10 +13,10 @@ public class NumberHolder {
     private static final String B = "B";
     private List<String> guessStore = new ArrayList<>();
     private static final int GUESS_TIMES = 6;
-    private  static final String GAME_OVER ="Game Over!!";
+    private static final String GAME_OVER = "Game Over!!";
 
-    public NumberHolder() {
-        this.number = new char[] {'5', '6', '7', '8'};
+    public NumberHolder(NumberGen numberGen) {
+        this.number = String.valueOf(numberGen.genNum()).toCharArray();
     }
 
     public String guess(String guess) {
