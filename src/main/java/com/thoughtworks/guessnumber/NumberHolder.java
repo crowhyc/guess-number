@@ -5,7 +5,8 @@ import java.util.stream.IntStream;
 
 public class NumberHolder {
 
-    public static final String INPUT_AGAIN = "Wrong Input, input again";
+    private static final String INPUT_AGAIN = "Wrong Input, input again";
+    private static final int NUMBER_DIGIT = 4;
     private char[] number;
     private static final String A = "A";
     private static final String B = "B";
@@ -15,6 +16,9 @@ public class NumberHolder {
     }
 
     public String guess(String guess) {
+        if (notEnoughDigit(guess)) {
+            return INPUT_AGAIN;
+        }
         if (hasDuplicateDigit(guess)) {
             return INPUT_AGAIN;
         }
@@ -33,6 +37,10 @@ public class NumberHolder {
                                                 .sum())
                         .sum();
         return ACount + A + BCount + B;
+    }
+
+    private boolean notEnoughDigit(String guess) {
+        return guess.length() != NUMBER_DIGIT;
     }
 
     private boolean hasDuplicateDigit(String guess) {

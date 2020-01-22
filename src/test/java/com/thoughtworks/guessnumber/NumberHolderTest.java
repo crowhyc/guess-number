@@ -33,10 +33,18 @@ public class NumberHolderTest {
         String result = numberHolder.guess("5876");
         assertEquals("2A2B", result);
     }
+
     @Test
     public void return_Wrong_Input_when_input_5567() {
         NumberHolder numberHolder = new NumberHolder();
         String result = numberHolder.guess("5567");
+        assertEquals("Wrong Input, input again", result);
+    }
+
+    @Test
+    public void return_Wrong_Input_when_input_123() {
+        NumberHolder numberHolder = new NumberHolder();
+        String result = numberHolder.guess("123");
         assertEquals("Wrong Input, input again", result);
     }
 }
