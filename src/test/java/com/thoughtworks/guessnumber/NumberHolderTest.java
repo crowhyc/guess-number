@@ -17,6 +17,13 @@ public class NumberHolderTest {
     public void return_4A0B_when_input_5678() {
         NumberHolder numberHolder = new NumberHolder();
         String result = numberHolder.guess("5678");
-        assertEquals(result,"4A0B");
+        assertEquals(result, "4A0B");
+    }
+
+    @Test
+    public void return_0A4B_when_input_6785() {
+        NumberHolder numberHolder = new NumberHolder();
+        String result = numberHolder.guess("6785");
+        assertEquals(result, "0A4B");
     }
 }
