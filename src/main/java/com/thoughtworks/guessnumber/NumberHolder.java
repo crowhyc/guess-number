@@ -1,7 +1,6 @@
 package com.thoughtworks.guessnumber;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
@@ -13,12 +12,17 @@ public class NumberHolder {
     private static final String A = "A";
     private static final String B = "B";
     private List<String> guessStore = new ArrayList<>();
+    private static final int GUESS_TIMES = 6;
+    private  static final String GAME_OVER ="Game Over!!";
 
     public NumberHolder() {
         this.number = new char[] {'5', '6', '7', '8'};
     }
 
     public String guess(String guess) {
+        if (guessStore.size() >= GUESS_TIMES) {
+            return GAME_OVER;
+        }
         if (notEnoughDigit(guess)) {
             return INPUT_AGAIN;
         }

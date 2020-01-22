@@ -55,4 +55,17 @@ public class NumberHolderTest {
         String result = numberHolder.guess("6789");
         assertEquals("4567 0A3B,6789 0A3B",result);
     }
+
+    @Test
+    public void return_Game_Over_when_input_number_7_times() {
+        NumberHolder numberHolder = new NumberHolder();
+        numberHolder.guess("4567");
+        numberHolder.guess("4567");
+        numberHolder.guess("4567");
+        numberHolder.guess("4567");
+        numberHolder.guess("4567");
+        numberHolder.guess("4567");
+        String result = numberHolder.guess("6789");
+        assertEquals("Game Over!!",result);
+    }
 }
